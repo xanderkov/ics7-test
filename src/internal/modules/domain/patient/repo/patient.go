@@ -98,6 +98,7 @@ func ToPatientDTO(model *ent.Patient) *dto.Patient {
 		Height:         model.Height,
 		DegreeOfDanger: model.DegreeOfDanger,
 		Weight:         model.Weight,
+		RoomNumber:     model.RoomNumber,
 	}
 }
 

@@ -37,3 +37,23 @@ func InvokeDBClient(client *ent.Client, cfg config.Config, lifecycle fx.Lifecycl
 
 	return nil
 }
+
+func TruncateAll(client *ent.Client) error {
+	_, err := client.Patient.Delete().Exec(context.Background())
+	if err != nil {
+		return err
+	}
+
+	_, err = client.Doctor.Delete().Exec(context.Background())
+	if err != nil {
+		return err
+	}
+
+	_, err = client.Room.Delete().Exec(context.Background())
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

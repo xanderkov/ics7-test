@@ -3,7 +3,6 @@ package config
 import (
 	"github.com/kelseyhightower/envconfig"
 	"go.uber.org/zap"
-	"hospital/internal/modules/app"
 )
 
 type Config struct {
@@ -26,7 +25,7 @@ type Config struct {
 	TelegramToken string `envconfig:"TELEGRAM_APITOKEN"`
 }
 
-func NewConfig(app app.App, logger *zap.Logger, logLevel zap.AtomicLevel) (Config, error) {
+func NewConfig(logger *zap.Logger, logLevel zap.AtomicLevel) (Config, error) {
 	var config Config
 
 	err := envconfig.Process("", &config)
