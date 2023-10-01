@@ -79,6 +79,21 @@ func (mr *MockIDoctorRepoMockRecorder) GetById(arg0, arg1 interface{}) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetById", reflect.TypeOf((*MockIDoctorRepo)(nil).GetById), arg0, arg1)
 }
 
+// GetByTokenId mocks base method.
+func (m *MockIDoctorRepo) GetByTokenId(arg0 context.Context, arg1 string) (*dto.Doctor, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetByTokenId", arg0, arg1)
+	ret0, _ := ret[0].(*dto.Doctor)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// GetByTokenId indicates an expected call of GetByTokenId.
+func (mr *MockIDoctorRepoMockRecorder) GetByTokenId(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetByTokenId", reflect.TypeOf((*MockIDoctorRepo)(nil).GetByTokenId), arg0, arg1)
+}
+
 // List mocks base method.
 func (m *MockIDoctorRepo) List(arg0 context.Context) (dto.Doctors, error) {
 	m.ctrl.T.Helper()
