@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8fccaead-eb7c-4f97-83d5-c12d3cc55144" name="Changes" comment="Added add patient method" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2NrttM8zry6jLYLDhEBasf0Q4yb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "configurable..is.expanded": "true",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/akovel/Documents/bmstu/ics7-test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/internal/modules/view" />
+      <recent name="$PROJECT_DIR$/src/bl/modules/domain/patient/service" />
+      <recent name="$PROJECT_DIR$/src/bl/modules/domain/doctor/service" />
+      <recent name="$PROJECT_DIR$/src/bl/modules/domain/dayPlan/service" />
+      <recent name="$PROJECT_DIR$/src/bl/modules/domain/authorization/service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/internal/modules/view/telegram" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/cmd/server" />
+      <recent name="$PROJECT_DIR$/src/bl/modules/domain/dayPlan" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.server">
+    <configuration name="go build hospital/src/cmd/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ics7-ppo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="hospital/src/cmd/server" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/src/cmd/server/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="ics7-ppo" />
+      <working_directory value="$PROJECT_DIR$/src" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <kind value="PACKAGE" />
+      <package value="hospital/cmd/server" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/src/cmd/server/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="integrational" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="ics7-ppo" />
+      <working_directory value="$PROJECT_DIR$/src/tests/integrational" />
+      <root_directory value="$PROJECT_DIR$/src" />
+      <kind value="PACKAGE" />
+      <package value="hospital/tests/integrational" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Докер" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="hospital" />
+              <option value="postgres" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/docker-compose.yml" />
+          <option name="upDetach" value="false" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="src.hospital: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="hospital" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="src.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="postgres" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Докер" />
+      <item itemvalue="Docker.src.hospital: Compose Deployment" />
+      <item itemvalue="Docker.src.postgres: Compose Deployment" />
+      <item itemvalue="Go Build.go build hospital/src/cmd/server" />
+      <item itemvalue="Go Build.server" />
+      <item itemvalue="Go Test.integrational" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.server" />
+        <item itemvalue="Docker.src.hospital: Compose Deployment" />
+        <item itemvalue="Docker.src.postgres: Compose Deployment" />
+        <item itemvalue="Go Test.integrational" />
+        <item itemvalue="Go Build.go build hospital/src/cmd/server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Started lab 3" />
+    <MESSAGE value="Added mock tests" />
+    <MESSAGE value="Added rooms to shemes" />
+    <MESSAGE value="Added modules and invokes. Added doctor repo" />
+    <MESSAGE value="Restructed project" />
+    <MESSAGE value="Fixed: connection to postgres db" />
+    <MESSAGE value="AAAAA" />
+    <MESSAGE value="Added repos for patients and rooms" />
+    <MESSAGE value="Added integrational tests" />
+    <MESSAGE value="I don't know" />
+    <MESSAGE value="Added handle for users" />
+    <MESSAGE value="Added registration" />
+    <MESSAGE value="Fixed added user deletion" />
+    <MESSAGE value="Added keyboard buttons" />
+    <MESSAGE value="WTF" />
+    <MESSAGE value="workspace added" />
+    <MESSAGE value="Added add patient method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added add patient method" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/tests/integrational/run_test.go</url>
+          <line>42</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/domain/patient/repo/patient.go</url>
+          <line>38</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/view/telegram/init.go</url>
+          <line>139</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/view/telegram/init.go</url>
+          <line>126</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/view/telegram/init.go</url>
+          <line>127</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/view/telegram/init.go</url>
+          <line>205</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/domain/room/repo/room.go</url>
+          <line>44</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
