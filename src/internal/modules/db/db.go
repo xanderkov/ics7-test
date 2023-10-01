@@ -50,6 +50,7 @@ func TruncateAll(client *ent.Client) error {
 	}
 
 	_, err = client.Room.Delete().Exec(context.Background())
+	_, err = client.Disease.Delete().Exec(context.Background())
 
 	if err != nil {
 		return err
