@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"github.com/golang/mock/gomock"
+	"github.com/ozontech/allure-go/pkg/framework/provider"
+	"github.com/ozontech/allure-go/pkg/framework/runner"
 	"hospital/internal/modules/domain/doctor/dto"
 	"reflect"
 	"testing"
@@ -31,7 +33,7 @@ func TestNewDoctorService(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			if got := NewDoctorService(tt.args.repo); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewDoctorService() = %v, want %v", got, tt.want)
 			}
@@ -128,7 +130,7 @@ func TestDoctorService_Create(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DoctorService{
 				repo: tt.fields.repo,
 			}
@@ -208,7 +210,7 @@ func TestDoctorService_Delete(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DoctorService{
 				repo: tt.fields.repo,
 			}
@@ -292,7 +294,7 @@ func TestDoctorService_GetById(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DoctorService{
 				repo: tt.fields.repo,
 			}
@@ -388,7 +390,7 @@ func TestDoctorService_List(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DoctorService{
 				repo: tt.fields.repo,
 			}
@@ -519,7 +521,7 @@ func TestDoctorService_Update(t *testing.T) {
 		testCase2,
 		testCase3,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DoctorService{
 				repo: tt.fields.repo,
 			}
@@ -608,7 +610,7 @@ func TestDoctorService_GetByTokenId(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DoctorService{
 				repo: tt.fields.repo,
 			}

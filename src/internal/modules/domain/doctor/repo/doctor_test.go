@@ -2,6 +2,8 @@ package repo
 
 import (
 	"context"
+	"github.com/ozontech/allure-go/pkg/framework/provider"
+	"github.com/ozontech/allure-go/pkg/framework/runner"
 	"hospital/internal/modules/config"
 	"hospital/internal/modules/db"
 	"hospital/internal/modules/db/ent"
@@ -32,7 +34,7 @@ func TestNewDoctorRepo(t *testing.T) {
 			},
 		},
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			if got := NewDoctorRepo(tt.args.client); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewDoctorRepo() = %v, want %v", got, tt.want)
 			}
@@ -92,7 +94,7 @@ func TestDoctorRepo_Create(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.GetById(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Create() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -119,7 +121,7 @@ func TestDoctorRepo_Create(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.GetById(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("GetById() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -190,7 +192,7 @@ func TestDoctorRepo_Delete(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		err := testCase1.repo.Delete(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Delete() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -214,7 +216,7 @@ func TestDoctorRepo_Delete(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		err := testCase2.repo.Delete(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("Delete() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -278,7 +280,7 @@ func TestDoctorRepo_GetById(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.GetById(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("GetById() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -305,7 +307,7 @@ func TestDoctorRepo_GetById(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.GetById(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("GetById() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -375,7 +377,7 @@ func TestDoctorRepo_List(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.List(context.Background())
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("List() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -448,7 +450,7 @@ func TestDoctorRepo_Restore(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.Restore(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Restore() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -475,7 +477,7 @@ func TestDoctorRepo_Restore(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.Restore(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("Restore() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -558,7 +560,7 @@ func TestDoctorRepo_Update(t *testing.T) {
 		TokenId:    "1",
 	}
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.Update(context.Background(), testCase1.id, &upd_doctor)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Update() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -585,7 +587,7 @@ func TestDoctorRepo_Update(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.Update(context.Background(), testCase2.id, &upd_doctor)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("Update() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -652,7 +654,7 @@ func TestToDoctorDTO(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got := ToDoctorDTO(doctor)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("ToDoctorDTO() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -723,7 +725,7 @@ func TestToDoctorDTOs(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		doctors, err := client.Doctor.Query().All(context.Background())
 		got := ToDoctorDTOs(doctors)
 		if (err != nil) != testCase1.wantErr {
@@ -791,7 +793,7 @@ func TestDoctorRepo_GetByTokenId(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.GetByTokenId(context.Background(), testCase1.tokenId)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("GetByTokenId() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -818,7 +820,7 @@ func TestDoctorRepo_GetByTokenId(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.GetByTokenId(context.Background(), testCase2.tokenId)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("GetByTokenId() error = %v, wantErr %v", err, testCase2.wantErr)

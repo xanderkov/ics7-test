@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fccaead-eb7c-4f97-83d5-c12d3cc55144" name="Changes" comment="Added tests for patient service">
-      <change afterPath="$PROJECT_DIR$/src/internal/modules/domain/doctor/service/doctor_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/internal/modules/domain/room/service/room_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/internal/modules/domain/doctor/service/mock_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/modules/domain/doctor/service/mock_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/internal/modules/domain/room/service/mock_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/modules/domain/room/service/mock_test.go" afterDir="false" />
+    <list default="true" id="8fccaead-eb7c-4f97-83d5-c12d3cc55144" name="Changes" comment="Tested all repos">
+      <change afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/src/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/src/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/internal/modules/domain/patient/service/patient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/modules/domain/patient/service/patient_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/internal/modules/logger/ctx.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,6 +34,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -53,9 +61,10 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/akovel/Documents/bmstu/ics7-test",
+    "last_opened_file_path": "/Users/akovel/Documents/bmstu/ics7-test/src",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
@@ -66,11 +75,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/internal/modules/view" />
       <recent name="$PROJECT_DIR$/src/bl/modules/domain/patient/service" />
       <recent name="$PROJECT_DIR$/src/bl/modules/domain/doctor/service" />
       <recent name="$PROJECT_DIR$/src/bl/modules/domain/dayPlan/service" />
-      <recent name="$PROJECT_DIR$/src/bl/modules/domain/authorization/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/internal/modules/view/telegram" />
@@ -79,7 +88,7 @@
       <recent name="$PROJECT_DIR$/src/bl/modules/domain/dayPlan" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.go test hospital/cmd/server">
+  <component name="RunManager" selected="Go Test.go test src">
     <configuration name="server (1)" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="ics7-ppo" />
       <working_directory value="$PROJECT_DIR$/src" />
@@ -130,9 +139,43 @@
       <filePath value="$PROJECT_DIR$/src/cmd/server/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="TestPatientRepo_List in hospital/internal/modules/domain/patient/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ics7-ppo" />
+      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/patient/repo" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <root_directory value="$PROJECT_DIR$/src" />
+      <kind value="PACKAGE" />
+      <package value="hospital/internal/modules/domain/patient/repo" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestPatientRepo_List\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestPatientService_Create in hospital/internal/modules/domain/patient/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="ics7-ppo" />
       <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/patient/service" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
       <EXTENSION ID="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -150,6 +193,59 @@
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <pattern value="^\QTestPatientService_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestToDiseaseDTOs in hospital/internal/modules/domain/disease/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ics7-ppo" />
+      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/disease/repo" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <root_directory value="$PROJECT_DIR$/src" />
+      <kind value="PACKAGE" />
+      <package value="hospital/internal/modules/domain/disease/repo" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestToDiseaseDTOs\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="ics7-ppo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <configuration name="go test hospital/cmd/server" type="GoTestRunConfiguration" factoryName="Go Test" nameIsGenerated="true">
@@ -178,9 +274,15 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
-    <configuration name="go test hospital/internal/modules/domain/doctor/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go test hospital/internal/modules/domain/disease/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/doctor/service" />
+      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/disease/repo" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
       <EXTENSION ID="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -193,15 +295,21 @@
       </EXTENSION>
       <root_directory value="$PROJECT_DIR$/src" />
       <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/doctor/service" />
+      <package value="hospital/internal/modules/domain/disease/repo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <method v="2" />
     </configuration>
-    <configuration name="go test hospital/internal/modules/domain/patient/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go test hospital/internal/modules/domain/patient/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/patient/service" />
+      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/patient/repo" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
       <EXTENSION ID="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -214,15 +322,22 @@
       </EXTENSION>
       <root_directory value="$PROJECT_DIR$/src" />
       <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/patient/service" />
+      <package value="hospital/internal/modules/domain/patient/repo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <method v="2" />
     </configuration>
-    <configuration name="go test hospital/internal/modules/domain/room/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go test src" type="GoTestRunConfiguration" factoryName="Go Test" nameIsGenerated="true">
       <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/room/service" />
+      <working_directory value="$PROJECT_DIR$/src" />
+      <parameters value=" -json | go-test-report" />
+      <envs>
+        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
+        <env name="DB_DRIVER" value="postgres" />
+        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
+        <env name="TRACE_SQL_COMMANDS" value="true" />
+      </envs>
       <EXTENSION ID="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -233,10 +348,8 @@
           <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
         </ENTRIES>
       </EXTENSION>
-      <root_directory value="$PROJECT_DIR$/src" />
-      <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/room/service" />
-      <directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$/src" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <method v="2" />
@@ -268,17 +381,20 @@
       <item itemvalue="Go Build.server" />
       <item itemvalue="Go Build.server (1)" />
       <item itemvalue="Go Test.go test hospital/cmd/server" />
+      <item itemvalue="Go Test.go test src" />
       <item itemvalue="Go Test.TestPatientService_Create in hospital/internal/modules/domain/patient/service" />
-      <item itemvalue="Go Test.go test hospital/internal/modules/domain/doctor/service" />
-      <item itemvalue="Go Test.go test hospital/internal/modules/domain/room/service" />
-      <item itemvalue="Go Test.go test hospital/internal/modules/domain/patient/service" />
+      <item itemvalue="Go Test.TestPatientRepo_List in hospital/internal/modules/domain/patient/repo" />
+      <item itemvalue="Go Test.TestToDiseaseDTOs in hospital/internal/modules/domain/disease/repo" />
+      <item itemvalue="Go Test.go test hospital/internal/modules/domain/disease/repo" />
+      <item itemvalue="Go Test.go test hospital/internal/modules/domain/patient/repo" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.go test hospital/internal/modules/domain/doctor/service" />
-        <item itemvalue="Go Test.go test hospital/internal/modules/domain/room/service" />
-        <item itemvalue="Go Test.go test hospital/internal/modules/domain/patient/service" />
         <item itemvalue="Go Test.TestPatientService_Create in hospital/internal/modules/domain/patient/service" />
+        <item itemvalue="Go Test.go test hospital/internal/modules/domain/patient/repo" />
+        <item itemvalue="Go Test.TestPatientRepo_List in hospital/internal/modules/domain/patient/repo" />
+        <item itemvalue="Go Test.go test hospital/internal/modules/domain/disease/repo" />
+        <item itemvalue="Go Test.TestToDiseaseDTOs in hospital/internal/modules/domain/disease/repo" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +422,10 @@
     <MESSAGE value="Added add patient method" />
     <MESSAGE value="Init project from ppo" />
     <MESSAGE value="Added tests for patient service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests for patient service" />
+    <MESSAGE value="Tested all services" />
+    <MESSAGE value="Tested patient repo" />
+    <MESSAGE value="Tested all repos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tested all repos" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -318,11 +437,6 @@
           <url>file://$PROJECT_DIR$/src/tests/integrational/run_test.go</url>
           <line>42</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/internal/modules/domain/patient/repo/patient.go</url>
-          <line>38</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/internal/modules/view/telegram/init.go</url>
@@ -354,10 +468,33 @@
           <line>98</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/domain/patient/repo/patient_test.go</url>
+          <line>326</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/domain/patient/repo/patient_test.go</url>
+          <line>560</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/internal/modules/domain/disease/repo/disease_test.go</url>
+          <line>708</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_doctor_service.out" NAME="go test hospital/internal/modules/domain/doctor/service Coverage Results" MODIFIED="1696164962054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_patient_service.out" NAME="go test hospital/internal/modules/domain/patient/service Coverage Results" MODIFIED="1696165751295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_room_service.out" NAME="go test hospital/internal/modules/domain/room/service Coverage Results" MODIFIED="1696165767671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_doctor_repo.out" NAME="go test hospital/internal/modules/domain/doctor/repo Coverage Results" MODIFIED="1696172296502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_disease_repo.out" NAME="go test hospital/internal/modules/domain/disease/repo Coverage Results" MODIFIED="1696173031496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_doctor_service.out" NAME="go test hospital/internal/modules/domain/doctor/service Coverage Results" MODIFIED="1696165914680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_disease_service.out" NAME="go test hospital/internal/modules/domain/disease/service Coverage Results" MODIFIED="1696166052302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_room_repo.out" NAME="go test hospital/internal/modules/domain/room/repo Coverage Results" MODIFIED="1696171839903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_auth_service.out" NAME="go test hospital/internal/modules/domain/auth/service Coverage Results" MODIFIED="1696166320097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ics7_test$go_test_hospital_internal_modules_domain_patient_repo.out" NAME="go test hospital/internal/modules/domain/patient/repo Coverage Results" MODIFIED="1696178423590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

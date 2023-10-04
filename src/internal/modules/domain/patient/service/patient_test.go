@@ -4,7 +4,10 @@ import (
 	"context"
 	"errors"
 	"github.com/golang/mock/gomock"
+	"github.com/ozontech/allure-go/pkg/framework/provider"
+	"github.com/ozontech/allure-go/pkg/framework/runner"
 	"hospital/internal/modules/domain/patient/dto"
+
 	"reflect"
 	"testing"
 )
@@ -31,11 +34,12 @@ func TestNewPatientService(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			if got := NewPatientService(tt.args.repo); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewPatientService() = %v, want %v", got, tt.want)
 			}
 		})
+
 	}
 }
 
@@ -140,7 +144,21 @@ func TestPatientService_Create(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		//runner.Run(t, tt.name, func(t provider.T) {
+		//	r := &PatientService{
+		//		repo: tt.fields.repo,
+		//	}
+		//	got, err := r.Create(tt.args.ctx, tt.args.dtm)
+		//	if (err != nil) != tt.wantErr {
+		//		t.Errorf("Create() error = %v, wantErr %v", err, tt.wantErr)
+		//		return
+		//	}
+		//	if !reflect.DeepEqual(got, tt.want) {
+		//		t.Errorf("Create() got = %v, want %v", got, tt.want)
+		//	}
+		//})
+
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &PatientService{
 				repo: tt.fields.repo,
 			}
@@ -153,6 +171,7 @@ func TestPatientService_Create(t *testing.T) {
 				t.Errorf("Create() got = %v, want %v", got, tt.want)
 			}
 		})
+
 	}
 }
 
@@ -220,7 +239,7 @@ func TestPatientService_Delete(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &PatientService{
 				repo: tt.fields.repo,
 			}
@@ -308,7 +327,7 @@ func TestPatientService_GetById(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &PatientService{
 				repo: tt.fields.repo,
 			}
@@ -410,7 +429,7 @@ func TestPatientService_List(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &PatientService{
 				repo: tt.fields.repo,
 			}
@@ -549,7 +568,7 @@ func TestPatientService_Update(t *testing.T) {
 		testCase2,
 		testCase3,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &PatientService{
 				repo: tt.fields.repo,
 			}

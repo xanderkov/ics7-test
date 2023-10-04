@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"github.com/golang/mock/gomock"
+	"github.com/ozontech/allure-go/pkg/framework/provider"
+	"github.com/ozontech/allure-go/pkg/framework/runner"
 	"hospital/internal/modules/config"
 	"hospital/internal/modules/domain/auth/dto"
 	doctor_dto "hospital/internal/modules/domain/doctor/dto"
@@ -100,7 +102,7 @@ func TestAuthService_SignUp(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &AuthService{
 				repo: tt.fields.repo,
 			}
@@ -139,7 +141,7 @@ func TestNewAuthService(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			if got := NewAuthService(tt.args.repo, tt.args.config); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewAuthService() = %v, want %v", got, tt.want)
 			}

@@ -1,13 +1,22 @@
 version: '3.3'
 
 services:
-  postgres:
-    image: postgres:13
-    container_name: postgres-hospital
-    environment:
-      POSTGRES_PASSWORD: postgres
-      PG_PASSWORD: postgres
-      POSTGRES_DB: hospital-test
-    ports:
-      - "5432:5432"
+#  postgres:
+#    image: postgres:13
+#    container_name: postgres-hospital
+#    environment:
+#      POSTGRES_PASSWORD: postgres
+#      PG_PASSWORD: postgres
+#      POSTGRES_DB: hospital-test
+#    ports:
+#      - "5432:5432"
 
+  hospital:
+    build: .
+    image: hospital-test:latest
+    container_name: hospital-test
+    env_file:
+      - .env
+    restart: always
+  #    ports:
+  #      - "8080:8080"

@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"github.com/golang/mock/gomock"
+	"github.com/ozontech/allure-go/pkg/framework/provider"
+	"github.com/ozontech/allure-go/pkg/framework/runner"
 	"hospital/internal/modules/domain/room/dto"
 	"reflect"
 	"testing"
@@ -31,7 +33,7 @@ func TestNewRoomService(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			if got := NewRoomService(tt.args.repo); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewRoomService() = %v, want %v", got, tt.want)
 			}
@@ -132,7 +134,7 @@ func TestRoomService_Create(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &RoomService{
 				repo: tt.fields.repo,
 			}
@@ -212,7 +214,7 @@ func TestRoomService_Delete(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &RoomService{
 				repo: tt.fields.repo,
 			}
@@ -298,7 +300,7 @@ func TestRoomService_GetById(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &RoomService{
 				repo: tt.fields.repo,
 			}
@@ -396,7 +398,7 @@ func TestRoomService_List(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &RoomService{
 				repo: tt.fields.repo,
 			}
@@ -532,7 +534,7 @@ func TestRoomService_Update(t *testing.T) {
 		testCase2,
 		testCase3,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &RoomService{
 				repo: tt.fields.repo,
 			}

@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"github.com/golang/mock/gomock"
+	"github.com/ozontech/allure-go/pkg/framework/provider"
+	"github.com/ozontech/allure-go/pkg/framework/runner"
 	"hospital/internal/modules/domain/disease/dto"
 	"reflect"
 	"testing"
@@ -31,7 +33,7 @@ func TestNewDiseaseService(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			if got := NewDiseaseService(tt.args.repo); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewDiseaseService() = %v, want %v", got, tt.want)
 			}
@@ -124,7 +126,7 @@ func TestDiseaseService_Create(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DiseaseService{
 				repo: tt.fields.repo,
 			}
@@ -204,7 +206,7 @@ func TestDiseaseService_Delete(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DiseaseService{
 				repo: tt.fields.repo,
 			}
@@ -287,7 +289,7 @@ func TestDiseaseService_GetById(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DiseaseService{
 				repo: tt.fields.repo,
 			}
@@ -379,7 +381,7 @@ func TestDiseaseService_List(t *testing.T) {
 		testCase1,
 		testCase2,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DiseaseService{
 				repo: tt.fields.repo,
 			}
@@ -506,7 +508,7 @@ func TestDiseaseService_Update(t *testing.T) {
 		testCase2,
 		testCase3,
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			r := &DiseaseService{
 				repo: tt.fields.repo,
 			}

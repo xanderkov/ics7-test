@@ -2,6 +2,8 @@ package repo
 
 import (
 	"context"
+	"github.com/ozontech/allure-go/pkg/framework/provider"
+	"github.com/ozontech/allure-go/pkg/framework/runner"
 	"hospital/internal/modules/config"
 	"hospital/internal/modules/db"
 	"hospital/internal/modules/db/ent"
@@ -32,7 +34,7 @@ func TestNewRoomRepo(t *testing.T) {
 			},
 		},
 	} {
-		t.Run(tt.name, func(t *testing.T) {
+		runner.Run(t, tt.name, func(t provider.T) {
 			if got := NewRoomRepo(tt.args.client); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewRoomRepo() = %v, want %v", got, tt.want)
 			}
@@ -94,7 +96,7 @@ func TestRoomRepo_Create(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.GetByNum(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Create() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -121,7 +123,7 @@ func TestRoomRepo_Create(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.GetByNum(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("GetByNum() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -194,7 +196,7 @@ func TestRoomRepo_Delete(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		err := testCase1.repo.Delete(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Delete() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -218,7 +220,7 @@ func TestRoomRepo_Delete(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		err := testCase2.repo.Delete(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("Delete() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -284,7 +286,7 @@ func TestRoomRepo_GetByNum(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.GetByNum(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("GetByNum() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -311,7 +313,7 @@ func TestRoomRepo_GetByNum(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.GetByNum(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("GetByNum() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -383,7 +385,7 @@ func TestRoomRepo_List(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.List(context.Background())
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("List() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -458,7 +460,7 @@ func TestRoomRepo_Restore(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.Restore(context.Background(), testCase1.id)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Restore() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -485,7 +487,7 @@ func TestRoomRepo_Restore(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.Restore(context.Background(), testCase2.id)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("Restore() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -571,7 +573,7 @@ func TestRoomRepo_Update(t *testing.T) {
 		NumberPatients: 1,
 	}
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got, err := testCase1.repo.Update(context.Background(), testCase1.id, &upd_room)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("Update() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -598,7 +600,7 @@ func TestRoomRepo_Update(t *testing.T) {
 	}
 
 	// Run the test case 2
-	t.Run(testCase2.name, func(t *testing.T) {
+	runner.Run(t, testCase2.name, func(t provider.T) {
 		got, err := testCase2.repo.Update(context.Background(), testCase2.id, &upd_room)
 		if (err != nil) != testCase2.wantErr {
 			t.Errorf("Update() error = %v, wantErr %v", err, testCase2.wantErr)
@@ -667,7 +669,7 @@ func TestToRoomDTO(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		got := ToRoomDTO(room)
 		if (err != nil) != testCase1.wantErr {
 			t.Errorf("ToRoomDTO() error = %v, wantErr %v", err, testCase1.wantErr)
@@ -740,7 +742,7 @@ func TestToRoomDTOs(t *testing.T) {
 	}
 
 	// Run the test case 1
-	t.Run(testCase1.name, func(t *testing.T) {
+	runner.Run(t, testCase1.name, func(t provider.T) {
 		rooms, err := client.Room.Query().All(context.Background())
 		got := ToRoomDTOs(rooms)
 		if (err != nil) != testCase1.wantErr {
