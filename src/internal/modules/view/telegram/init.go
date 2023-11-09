@@ -44,7 +44,7 @@ func singUp(chatId int64, user *UsersMessage) string {
 	return msg
 }
 
-func endSingUp(user *UsersMessage, chatId int64, controller *controllers.Controller) string {
+func EndSingUp(user *UsersMessage, chatId int64, controller *controllers.Controller) string {
 	var reply string
 
 	newDoctor := &auth_dto.NewDoctor{
@@ -63,7 +63,7 @@ func endSingUp(user *UsersMessage, chatId int64, controller *controllers.Control
 	return reply
 }
 
-func endAddPatient(user *UsersMessage, controller *controllers.Controller) string {
+func EndAddPatient(user *UsersMessage, controller *controllers.Controller) string {
 	var reply string
 	height, _ := strconv.Atoi(user.UserMessages[3])
 	weight, _ := strconv.ParseFloat(user.UserMessages[4], 64)
@@ -89,7 +89,7 @@ func endAddPatient(user *UsersMessage, controller *controllers.Controller) strin
 	return reply
 }
 
-func endAddRoom(user *UsersMessage, controller *controllers.Controller) string {
+func EndAddRoom(user *UsersMessage, controller *controllers.Controller) string {
 	var reply string
 
 	num, _ := strconv.Atoi(user.UserMessages[0])
@@ -113,7 +113,7 @@ func endAddRoom(user *UsersMessage, controller *controllers.Controller) string {
 	return reply
 }
 
-func endAddDisease(user *UsersMessage, controller *controllers.Controller) string {
+func EndAddDisease(user *UsersMessage, controller *controllers.Controller) string {
 	var reply string
 
 	degreeOfDanger, _ := strconv.Atoi(user.UserMessages[1])
@@ -147,13 +147,13 @@ func handleUsers(
 			} else {
 				switch u.Command {
 				case "Зарегестрироваться":
-					msg = endSingUp(&Users[i], chatId, controller)
+					msg = EndSingUp(&Users[i], chatId, controller)
 				case "Добавить пациента":
-					msg = endAddPatient(&Users[i], controller)
+					msg = EndAddPatient(&Users[i], controller)
 				case "Добавить палату":
-					msg = endAddRoom(&Users[i], controller)
+					msg = EndAddRoom(&Users[i], controller)
 				case "Добавить заболевание":
-					msg = endAddDisease(&Users[i], controller)
+					msg = EndAddDisease(&Users[i], controller)
 
 				}
 				Users = Users[:i+copy(Users[i:], Users[i+1:])]
@@ -164,7 +164,7 @@ func handleUsers(
 	return msg, Users
 }
 
-func getInfoAboutDoctor(id int64, controller *controllers.Controller) string {
+func GetInfoAboutDoctor(id int64, controller *controllers.Controller) string {
 	token := strconv.FormatInt(id, 10)
 	doctor, err := controller.DoctorToken(context.Background(), token)
 	if err != nil {
@@ -264,7 +264,7 @@ func handleBot(
 					Users = append(Users, UsersMessage{ChatId: ChatId, Command: update.Message.Text})
 					msg.Text = singUp(ChatId, &Users[len(Users)-1])
 				case "Просмотреть данные о себе":
-					msg.Text = getInfoAboutDoctor(ChatId, controller)
+					msg.Text = GetInfoAboutDoctor(ChatId, controller)
 				case "Добавить пациента":
 					Users = append(Users, UsersMessage{ChatId: ChatId, Command: update.Message.Text})
 					msg.Text = addPatient(ChatId, &Users[len(Users)-1])
