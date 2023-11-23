@@ -1,0 +1,73 @@
+image: xanderkov/dind-golang:latest
+
+services:
+  - name: docker:dind
+
+before_script:
+  - docker info
+
+stages:
+  - build
+  - test
+
+backend-build-job:
+  stage: build
+  when: always
+  script:
+    - cd src/
+    - go mod tidy
+    - go build cmd/server/main.go
+  artifacts:
+    paths:
+      - main
+    expire_in: 1 hour
+
+.setup_test_env:
+  before_script:
+    - cd src/
+    - rm -rf ./test-reports/*
+    - mkdir -p ./test-reports
+    - export ALLURE_OUTPUT_PATH=./test-reports
+    - go mod tidy
+    - set -a
+    - source .env
+    - set +a
+
+backend-unit:
+  stage: test
+  when: always
+  extends: .setup_test_env
+  script:
+    - docker compose run hospital-test go test ./internal/...
+  artifacts:
+    paths:
+      - test-reports
+    expire_in: 1 hour
+  needs:
+    - backend-build-job
+
+backend-postgres-integration-test-job:
+  stage: test
+  when: always
+  extends: .setup_test_env
+  script:
+    - docker compose run hospital-test go test ./tests/integrational
+  artifacts:
+    paths:
+      - test-reports
+    expire_in: 1 hour
+  needs:
+    - backend-unit
+
+backend-e2e-test-job:
+  stage: test
+  when: always
+  extends: .setup_test_env
+  script:
+    - docker compose run hospital-test go test ./tests/e2e
+  artifacts:
+    paths:
+      - test-reports
+    expire_in: 1 hour
+  needs:
+    - backend-postgres-integration-test-job
