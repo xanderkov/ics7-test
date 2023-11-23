@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fccaead-eb7c-4f97-83d5-c12d3cc55144" name="Changes" comment="Tested all repos">
-      <change afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
+    <list default="true" id="8fccaead-eb7c-4f97-83d5-c12d3cc55144" name="Changes" comment="Added allure report">
+      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/e2e/modules.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/e2e/run_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/e2e/view_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/src/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/src/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/internal/modules/domain/patient/service/patient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/modules/domain/patient/service/patient_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/internal/modules/logger/ctx.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/internal/modules/view/telegram/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/modules/view/telegram/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/integrational/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/integrational/utils.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go File" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -46,33 +50,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "configurable..is.expanded": "true",
-    "configurable.GoLibrariesConfigurable.is.expanded": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/akovel/Documents/bmstu/ics7-test/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;configurable..is.expanded&quot;: &quot;true&quot;,
+    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/akovel/Documents/bmstu/ics7-test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -82,6 +86,7 @@
       <recent name="$PROJECT_DIR$/src/bl/modules/domain/dayPlan/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/tests" />
       <recent name="$PROJECT_DIR$/src/internal/modules/view/telegram" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/cmd/server" />
@@ -139,9 +144,9 @@
       <filePath value="$PROJECT_DIR$/src/cmd/server/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="TestPatientRepo_List in hospital/internal/modules/domain/patient/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServices in hospital/tests/e2e" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/patient/repo" />
+      <working_directory value="$PROJECT_DIR$/src/tests/e2e" />
       <envs>
         <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
         <env name="DB_DRIVER" value="postgres" />
@@ -160,16 +165,16 @@
       </EXTENSION>
       <root_directory value="$PROJECT_DIR$/src" />
       <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/patient/repo" />
+      <package value="hospital/tests/e2e" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestPatientRepo_List\E$" />
+      <pattern value="^\QTestServices\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestPatientService_Create in hospital/internal/modules/domain/patient/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServices in hospital/tests/integrational" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/patient/service" />
+      <working_directory value="$PROJECT_DIR$/src/tests/integrational" />
       <envs>
         <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
         <env name="DB_DRIVER" value="postgres" />
@@ -188,39 +193,11 @@
       </EXTENSION>
       <root_directory value="$PROJECT_DIR$/src" />
       <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/patient/service" />
+      <package value="hospital/tests/integrational" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestPatientService_Create\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestToDiseaseDTOs in hospital/internal/modules/domain/disease/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/disease/repo" />
-      <envs>
-        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
-        <env name="DB_DRIVER" value="postgres" />
-        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
-        <env name="TRACE_SQL_COMMANDS" value="true" />
-      </envs>
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </EXTENSION>
-      <root_directory value="$PROJECT_DIR$/src" />
-      <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/disease/repo" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestToDiseaseDTOs\E$" />
+      <pattern value="^\QTestServices\E$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -274,9 +251,9 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
-    <configuration name="go test hospital/internal/modules/domain/disease/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go test hospital/tests/e2e" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/disease/repo" />
+      <working_directory value="$PROJECT_DIR$/src/tests/e2e" />
       <envs>
         <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
         <env name="DB_DRIVER" value="postgres" />
@@ -295,34 +272,7 @@
       </EXTENSION>
       <root_directory value="$PROJECT_DIR$/src" />
       <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/disease/repo" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go test hospital/internal/modules/domain/patient/repo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="ics7-ppo" />
-      <working_directory value="$PROJECT_DIR$/src/internal/modules/domain/patient/repo" />
-      <envs>
-        <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
-        <env name="DB_DRIVER" value="postgres" />
-        <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
-        <env name="TRACE_SQL_COMMANDS" value="true" />
-      </envs>
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </EXTENSION>
-      <root_directory value="$PROJECT_DIR$/src" />
-      <kind value="PACKAGE" />
-      <package value="hospital/internal/modules/domain/patient/repo" />
+      <package value="hospital/tests/e2e" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -331,8 +281,8 @@
     <configuration name="go test src" type="GoTestRunConfiguration" factoryName="Go Test" nameIsGenerated="true">
       <module name="ics7-ppo" />
       <working_directory value="$PROJECT_DIR$/src" />
-      <parameters value=" -json | go-test-report" />
       <envs>
+        <env name="ALLURE_OUTPUT_PATH" value="$PROJECT_DIR$/src" />
         <env name="DB_CONN_STRING" value="host=localhost port=5432 user=postgres dbname=hospital-test password=postgres sslmode=disable" />
         <env name="DB_DRIVER" value="postgres" />
         <env name="TELEGRAM_APITOKEN" value="5806493128:AAGZMFllw63Cp-Oy9N2b-xq_KTgPZJ66YkE" />
@@ -349,6 +299,7 @@
         </ENTRIES>
       </EXTENSION>
       <kind value="DIRECTORY" />
+      <package value="hospital" />
       <directory value="$PROJECT_DIR$/src" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -376,25 +327,51 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="src.hospital: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="hospital" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="src.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="postgres" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker.Докер" />
+      <item itemvalue="Docker.src.hospital: Compose Deployment" />
+      <item itemvalue="Docker.src.postgres: Compose Deployment" />
       <item itemvalue="Go Build.server" />
       <item itemvalue="Go Build.server (1)" />
       <item itemvalue="Go Test.go test hospital/cmd/server" />
       <item itemvalue="Go Test.go test src" />
-      <item itemvalue="Go Test.TestPatientService_Create in hospital/internal/modules/domain/patient/service" />
-      <item itemvalue="Go Test.TestPatientRepo_List in hospital/internal/modules/domain/patient/repo" />
-      <item itemvalue="Go Test.TestToDiseaseDTOs in hospital/internal/modules/domain/disease/repo" />
-      <item itemvalue="Go Test.go test hospital/internal/modules/domain/disease/repo" />
-      <item itemvalue="Go Test.go test hospital/internal/modules/domain/patient/repo" />
+      <item itemvalue="Go Test.TestServices in hospital/tests/e2e" />
+      <item itemvalue="Go Test.TestServices in hospital/tests/integrational" />
+      <item itemvalue="Go Test.go test hospital/tests/e2e" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestPatientService_Create in hospital/internal/modules/domain/patient/service" />
-        <item itemvalue="Go Test.go test hospital/internal/modules/domain/patient/repo" />
-        <item itemvalue="Go Test.TestPatientRepo_List in hospital/internal/modules/domain/patient/repo" />
-        <item itemvalue="Go Test.go test hospital/internal/modules/domain/disease/repo" />
-        <item itemvalue="Go Test.TestToDiseaseDTOs in hospital/internal/modules/domain/disease/repo" />
+        <item itemvalue="Go Test.go test hospital/tests/e2e" />
+        <item itemvalue="Docker.src.postgres: Compose Deployment" />
+        <item itemvalue="Go Test.TestServices in hospital/tests/e2e" />
+        <item itemvalue="Docker.src.hospital: Compose Deployment" />
+        <item itemvalue="Go Test.TestServices in hospital/tests/integrational" />
       </list>
     </recent_temporary>
   </component>
@@ -425,7 +402,9 @@
     <MESSAGE value="Tested all services" />
     <MESSAGE value="Tested patient repo" />
     <MESSAGE value="Tested all repos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tested all repos" />
+    <MESSAGE value="Remaked all tests to allure" />
+    <MESSAGE value="Added allure report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added allure report" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -465,22 +444,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/internal/modules/domain/room/service/room_test.go</url>
-          <line>98</line>
+          <line>100</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/internal/modules/domain/patient/repo/patient_test.go</url>
-          <line>326</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/internal/modules/domain/patient/repo/patient_test.go</url>
-          <line>560</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/internal/modules/domain/disease/repo/disease_test.go</url>
-          <line>708</line>
+          <line>710</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
