@@ -1,22 +1,22 @@
 version: '3.3'
 
 services:
-#  postgres:
-#    image: postgres:13
-#    environment:
-#      POSTGRES_PASSWORD: postgres
-#      PG_PASSWORD: postgres
-#      POSTGRES_DB: hospital-test
-#      PGDATA: /var/lib/postgresql/data/pgdata
-#      POSTGRESQL_PGAUDIT_LOG: READ,WRITE
-#      POSTGRESQL_LOG_HOSTNAME: true
-#      POSTGRESQL_REPLICATION_MODE: master
-#      POSTGRESQL_REPLICATION_USER: repl_user
-#      POSTGRESQL_REPLICATION_PASSWORD: repl_password
-#    volumes:
-#      - ../../../postgress-data:/var/lib/postgresql/data
-#    ports:
-#      - "5432:5432"
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: postgres
+      PG_PASSWORD: postgres
+      POSTGRES_DB: hospital-test
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRESQL_PGAUDIT_LOG: READ,WRITE
+      POSTGRESQL_LOG_HOSTNAME: true
+      POSTGRESQL_REPLICATION_MODE: master
+      POSTGRESQL_REPLICATION_USER: repl_user
+      POSTGRESQL_REPLICATION_PASSWORD: repl_password
+    volumes:
+      - ../../../postgress-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
   hospital-test:
     build: .
@@ -25,5 +25,16 @@ services:
     env_file:
       - .env
 #    restart: always
-#    command: "go test ./..."
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./files_bench:/build/files_bench
+    command: "go test -bench=. -benchmem -cpuprofile=/build/files_bench/cpu.out -memprofile=/build/files_bench/mem.out ./tests/benchmark/ "
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
 

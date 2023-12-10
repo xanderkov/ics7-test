@@ -1,4 +1,4 @@
-package modules
+package benchamark
 
 import (
 	"go.uber.org/fx"
@@ -14,29 +14,26 @@ import (
 )
 
 var (
-	AppModule = fx.Options(
+	testModule = fx.Options(
 		app.Module,
 		logger.Module,
 		config.Module,
 		db.Module,
-
 		domain.Module,
-		telegram.Module,
 		metrics.Module,
+		telegram.Module,
 
 		fx.WithLogger(func(log *zap.Logger) fxevent.Logger {
 			return &fxevent.ZapLogger{Logger: log}
 		}),
 	)
-
-	AppInvokables = fx.Options(
+	testInvokables = fx.Options(
 		app.Invokables,
-		logger.Invokables,
+		//logger.Invokables,
 		config.Invokables,
 		db.Invokables,
 
 		domain.Invokables,
 		metrics.Invokables,
-		telegram.Invokables,
 	)
 )

@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fccaead-eb7c-4f97-83d5-c12d3cc55144" name="Changes" comment="Added allure report">
-      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/e2e/modules.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/e2e/run_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/e2e/view_test.go" afterDir="false" />
+    <list default="true" id="8fccaead-eb7c-4f97-83d5-c12d3cc55144" name="Changes" comment="Ломаю проект">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/internal/modules/view/telegram/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/modules/view/telegram/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/integrational/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/integrational/utils.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +80,11 @@
       <recent name="$PROJECT_DIR$/src/bl/modules/domain/dayPlan/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/tests" />
       <recent name="$PROJECT_DIR$/src/internal/modules/view/telegram" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/cmd/server" />
-      <recent name="$PROJECT_DIR$/src/bl/modules/domain/dayPlan" />
     </key>
   </component>
   <component name="RunManager" selected="Go Test.go test src">
@@ -380,7 +374,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started lab 3" />
     <MESSAGE value="Added mock tests" />
     <MESSAGE value="Added rooms to shemes" />
     <MESSAGE value="Added modules and invokes. Added doctor repo" />
@@ -404,7 +397,9 @@
     <MESSAGE value="Tested all repos" />
     <MESSAGE value="Remaked all tests to allure" />
     <MESSAGE value="Added allure report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added allure report" />
+    <MESSAGE value="Updated src&#10;\" />
+    <MESSAGE value="Ломаю проект" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ломаю проект" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

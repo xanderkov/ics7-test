@@ -9,6 +9,7 @@ import (
 	"hospital/internal/modules/db"
 	"hospital/internal/modules/domain"
 	"hospital/internal/modules/logger"
+	"hospital/internal/modules/metrics"
 )
 
 var (
@@ -18,6 +19,7 @@ var (
 		config.Module,
 		db.Module,
 		domain.Module,
+		metrics.Module,
 
 		fx.WithLogger(func(log *zap.Logger) fxevent.Logger {
 			return &fxevent.ZapLogger{Logger: log}
@@ -29,5 +31,6 @@ var (
 		config.Invokables,
 		db.Invokables,
 		domain.Invokables,
+		metrics.Invokables,
 	)
 )
